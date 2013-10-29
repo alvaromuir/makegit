@@ -57,7 +57,8 @@ if [ -z "${u}" ] || [ -z "${t}" ] || [ -z "${n}" ]; then
 
         file=$1
         # echo $file
-        curl --request POST $url/user/repos --user $u --data '{"name": "'$n'","description": "'$d'","homepage": "'$h'","private":'${p}', "gitignore_template":"'${g}'", "auto_init":"'${i}'"}'
+        /usr/bin/curl --request POST $url/user/repos --user $u --data '{"name": "'$n'","description": "'$d'","homepage": "'$h'","private":'${p}', "gitignore_template":"'${g}'", "auto_init":"'${i}'"}'
+        /usr/bin/git remote add origin https://github.com/$u/$n
         ;;
 
       'gist')
