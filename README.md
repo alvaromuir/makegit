@@ -20,7 +20,10 @@ $ makegit -u alvaromuir:password -t gist -d 'this is a test upload' -p true test
 
 __create a repo:__
 ```
+$ mkdir ~/repo_dir
+$ cd ~/repo_dir
 $ makegit -u alvaromuir -t repo -n 'test_js_repo' -g 'javascript' -p true  -h "http://www.muiral.com/github/js"
+
 ```
 
 __note:__ _a username alone w/o a password will prompt for one._
