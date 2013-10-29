@@ -15,12 +15,12 @@ $ curl https://raw.github.com/alvaromuir/makegit/master/makegit > makegit &&
 
 __post a gist:__
 ```
-$ makegit -u alvaromuir:password -t _gist_ -d 'this is a test upload' -p true test_files/test3.m
+$ makegit -u alvaromuir:password -t gist -d 'this is a test upload' -p true test_files/test3.m
 ```
 
 __create a repo:__
 ```
-$ makegit -u alvaromuir -t _repo_ -n 'test_js_repo' -g 'javascript' -p true  -h "http://www.muiral.com/github/js"
+$ makegit -u alvaromuir -t repo -n 'test_js_repo' -g 'javascript' -p true  -h "http://www.muiral.com/github/js"
 ```
 
 __note:__ _a username alone w/o a password will prompt for one._
