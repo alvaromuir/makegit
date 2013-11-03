@@ -1,5 +1,5 @@
 #!/bin/sh
-usage() { echo "Usage: $0 [-u <username>] [-t <repo|gist>] [-n <string>] (opt. [-p <true|false>] [-d <description>] [-h <homepage>] [-g <gitignore>] [-i <true|false>]) [filename]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 [-u <username>] [-t <repo|gist>] [-n <repo or gist name>] (opt. [-p <true|false>] [-d <description>] [-h <homepage>] [-g <gitignore>] [-i <true|false>]) [filename]" 1>&2; exit 1; }
 
 while getopts ":u:t:n:p:d:h:g:i:" o; do
   case "${o}" in
