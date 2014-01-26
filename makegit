@@ -60,6 +60,9 @@ if [ -z "${u}" ] || [ -z "${t}" ] || [ -z "${n}" ]; then
         /usr/bin/curl --request POST $url/user/repos --user $u --data '{"name": "'$n'","description": "'$d'","homepage": "'$h'","private":'${p}', "gitignore_template":"'${g}'", "auto_init":"'${i}'"}'
         /usr/bin/git init
         /usr/bin/git remote add origin https://github.com/$u/$n
+        /usr/bin/git add .
+        /usr/bin/git commit -m "initial push"
+        /usr/bin/git push --set-upstream origin master
         ;;
 
       'gist')
