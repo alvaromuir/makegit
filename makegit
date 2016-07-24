@@ -1,5 +1,5 @@
 #!/bin/sh
-usage() { echo "Usage: $0 [-u <username>] [-t <repo|gist>] [-n <repo or gist name>] (opt. [-p <true|false>] [-d <description>] [-h <homepage>] [-g <gitignore>] [-i <true|false>]) [filename]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 [-u <username>] [-t <repo|gist>] [-n <repo or gist name>] (opt. [-p < private repo true|false>] [-d <description>] [-h <homepage>] [-g <gitignore>] [-i <true|false>]) [filename]" 1>&2; exit 1; }
 
 while getopts ":u:t:n:p:d:h:g:i:" o; do
   case "${o}" in
@@ -17,13 +17,13 @@ while getopts ":u:t:n:p:d:h:g:i:" o; do
       p=${OPTARG}
       ((p == true || p == false)) || usage
       ;;
-    d)  
+    d)
       d=${OPTARG} || "Created via API"
       ;;
-    h)  
+    h)
       h=${OPTARG}
       ;;
-    g)  
+    g)
       g=${OPTARG}
       ;;
     i)
@@ -43,14 +43,14 @@ if [ -z "${u}" ] || [ -z "${t}" ] || [ -z "${n}" ]; then
     url=https://api.github.com
 
     case "$t" in
-      'repo') 
+      'repo')
         if [ -z "${p}" ]
-          then 
+          then
             p=false
         fi
 
         if [ -z "${i}" ]
-          then 
+          then
             i=false
         fi
         homepage="${h}" || ' '
@@ -67,7 +67,7 @@ if [ -z "${u}" ] || [ -z "${t}" ] || [ -z "${n}" ]; then
 
       'gist')
         if [ -z "${p}" ]
-          then 
+          then
             p=true
         fi
 
